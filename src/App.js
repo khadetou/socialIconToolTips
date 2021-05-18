@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Socials from './components/Socials';
+import {useStyles} from './styles/tooltipStyle';
 function App() {
+const {social, socialContainer, toolTipLeft, toolTipTop, toolTipBottom, toolTipRight} = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={social}>
+      <div className={socialContainer}>
+        <Socials icon = 'bx bxl-facebook-circle' tip = '15000 +' toolTip={toolTipLeft}/>
+        <Socials icon = 'bx bxl-instagram-alt' tip= '10000 +' toolTip={toolTipTop}/>
+        <Socials icon = 'bx bxl-twitter' tip ='12000 +'   toolTip={toolTipBottom}/>
+        <Socials icon = 'bx bxl-github' tip ='1500 +' toolTip={toolTipTop}/>
+        <Socials icon = 'bx bxl-discord' tip ='800 +' toolTip={toolTipRight}/>
+      </div>
     </div>
   );
 }
